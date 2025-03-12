@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 class Vehicle {
     private static double registrationFee = 500; // Static variable
     private final String registrationNumber; // Final variable
@@ -8,6 +10,10 @@ class Vehicle {
         this.registrationNumber = registrationNumber;
         this.ownerName = ownerName;
         this.vehicleType = vehicleType;
+    }
+
+    public static void updatedRegistrationFees(double updatedFees) {
+        registrationFee = updatedFees;
     }
 
     public void displayVehicleDetails() {
@@ -23,8 +29,13 @@ class Vehicle {
 // Main class
 public class VehicleSystem {
     public static void main(String[] args) {
-        Vehicle vehicle1 = new Vehicle("XYZ123", "Aman", "Car");
-        Vehicle vehicle2 = new Vehicle("ABC789", "Raj", "Motorcycle");
+        Vehicle vehicle1 = new Vehicle("GD52", "Yagyata", "Car");
+        Vehicle vehicle2 = new Vehicle("LX56", "Loveleen", "Motorcycle");
+
+        vehicle1.displayVehicleDetails();
+        vehicle2.displayVehicleDetails();
+        Vehicle.updatedRegistrationFees(1000.0);
+        System.out.println();
 
         vehicle1.displayVehicleDetails();
         vehicle2.displayVehicleDetails();
