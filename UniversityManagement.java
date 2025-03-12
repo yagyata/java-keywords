@@ -1,5 +1,5 @@
 class Student {
-    private static String universityName = "RGPV University"; // Static variable
+    private static String universityName = "Chitkara University"; // Static variable
     private final int rollNumber; // Final variable
     private String name;
     private String grade;
@@ -8,6 +8,10 @@ class Student {
         this.rollNumber = rollNumber;
         this.name = name;
         this.grade = grade;
+    }
+
+    public static int displayTotalStudents(int total) {
+        return total;
     }
 
     public void displayStudentDetails() {
@@ -28,5 +32,8 @@ public class UniversityManagement {
 
         stu1.displayStudentDetails();
         stu2.displayStudentDetails();
+
+        int totalNo = Student.displayTotalStudents(52);
+        System.out.println("Total number of students are: " + totalNo);
     }
 }
